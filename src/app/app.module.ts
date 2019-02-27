@@ -7,11 +7,13 @@ import { MensaNavComponent } from './components/mensa-nav/mensa-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MensaListComponent } from './components/mensalist/mensalist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MensaNavComponent
+    MensaNavComponent,
+    MensaListComponent
   ],
   imports: [
     BrowserModule,
