@@ -16,10 +16,15 @@ export class MensaListComponent implements OnInit {
 
 
   constructor(private mensaService: MensaService) {
+    if(!localStorage["mensas"]){
     mensaService.getCanteens().subscribe((response: [Mensa] )=> {
       console.log(response);
       this.data = response;
+      localStorage.setItem("mensas", JSON.stringify(this.data));
     });
+  }else{
+    this.data = JSON.parse(localStorage.getItem("mensas"));
+  }
    }
 
   ngOnInit() {
