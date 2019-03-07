@@ -14,7 +14,6 @@ export class MensaListComponent implements OnInit {
   public dataSource = new MatTableDataSource<Mensa>(this.data);
   public displayedColumns: string[] = ['id', 'name', 'address']; 
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private mensaService: MensaService) {
     mensaService.getCanteens().subscribe((response: [Mensa] )=> {
@@ -24,7 +23,6 @@ export class MensaListComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
   }
 
 }
