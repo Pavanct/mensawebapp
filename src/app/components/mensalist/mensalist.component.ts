@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MensaService } from 'src/app/services/mensa.service';
 import { Mensa } from 'src/app/models/mensa';
 import {MatPaginator, MatTableDataSource} from '@angular/material';
-import { DataSource } from '@angular/cdk/table';
 
 @Component({
   selector: 'mensalist',
