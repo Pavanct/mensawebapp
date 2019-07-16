@@ -11,20 +11,21 @@ import {MatPaginator, MatTableDataSource} from '@angular/material';
 })
 export class MensaListComponent implements OnInit {
   public data: Mensa[];
-  public dataSource = new MatTableDataSource<Mensa>(this.data);
-  public displayedColumns: string[] = ['id', 'name', 'address']; 
+  public dataSource: MatTableDataSource<Mensa>;
+  public displayedColumns: string[] = ['id', 'name', 'address'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private mensaService: MensaService) {
-    mensaService.getCanteens().subscribe((response: [Mensa] )=> {
-      console.log(response);
+    mensaService.getCanteens().subscribe((response: [Mensa] ) => {
       this.data = response;
+      this.dataSource = new MatTableDataSource(this.data);
+      this.dataSource.paginator = this.paginator;
     });
    }
 
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
+
   }
 
 }
