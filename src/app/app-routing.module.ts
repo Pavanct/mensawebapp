@@ -1,9 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MensaListComponent } from './components/mensalist/mensalist.component';
 
 const routes: Routes = [
-  { path: 'mensaList', component: MensaListComponent }
+
+  // please make sure when you add new routes
+  {
+    path: 'mensaList',
+    loadChildren: './components/mensa/mensa.module#MensaModule'
+  },
+  {
+    path: '',
+    redirectTo: 'mensaList',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

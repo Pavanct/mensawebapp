@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MensaListComponent } from './mensalist.component';
+import { MensaDetailComponent } from './mensa-detail.component';
 
-describe('MensaListComponent', () => {
-  let component: MensaListComponent;
-  let fixture: ComponentFixture<MensaListComponent>;
+describe('MensaDetailComponent', () => {
+  let component: MensaDetailComponent;
+  let fixture: ComponentFixture<MensaDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MensaListComponent ]
+      declarations: [ MensaDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MensaListComponent);
+    fixture = TestBed.createComponent(MensaDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
